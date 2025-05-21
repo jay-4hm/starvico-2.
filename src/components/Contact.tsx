@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Container from './ui/Container';
 import Button from './ui/Button';
 import { Mail, Phone, Send } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
 interface FormState {
   name: string;
@@ -30,6 +31,7 @@ const Contact: React.FC = () => {
   const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const validateForm = () => {
     const newErrors: FormErrors = {};
@@ -56,21 +58,25 @@ const Contact: React.FC = () => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     
-    // Clear error when user types
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitError(null);
     
     if (validateForm()) {
       setIsSubmitting(true);
       
-      // Simulate API call
-      setTimeout(() => {
-        setIsSubmitting(false);
+      try {
+        const { error } = await supabase
+          .from('contact_submissions')
+          .insert([formData]);
+
+        if (error) throw error;
+        
         setSubmitSuccess(true);
         setFormData({
           name: '',
@@ -83,7 +89,12 @@ const Contact: React.FC = () => {
         setTimeout(() => {
           setSubmitSuccess(false);
         }, 5000);
-      }, 1500);
+      } catch (error) {
+        console.error('Error submitting form:', error);
+        setSubmitError('Failed to submit form. Please try again later.');
+      } finally {
+        setIsSubmitting(false);
+      }
     }
   };
 
@@ -214,6 +225,12 @@ const Contact: React.FC = () => {
                     ></textarea>
                     {errors.message && <p className="mt-1 text-sm text-error-500">{errors.message}</p>}
                   </div>
+
+                  {submitError && (
+                    <div className="p-3 bg-error-500/10 border border-error-500 rounded-lg">
+                      <p className="text-error-500">{submitError}</p>
+                    </div>
+                  )}
                   
                   <div>
                     <Button
