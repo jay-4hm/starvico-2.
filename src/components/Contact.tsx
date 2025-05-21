@@ -134,7 +134,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div className="ml-4">
                   <h3 className="text-lg font-medium text-white">Call</h3>
-                  <p className="mt-1 text-dark-300">+1 (555) 123-4567</p>
+                  <p className="mt-1 text-dark-300">+91 9408224493</p>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@ const Contact: React.FC = () => {
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 bg-dark-700 border border-dark-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 text-white"
-                      placeholder="+1 (555) 123-4567"
+                      placeholder="+91 9408224493"
                     />
                   </div>
                   
