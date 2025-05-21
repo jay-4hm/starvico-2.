@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <div className="inline-block px-3 py-1 rounded-full bg-primary-500/10 text-primary-400 text-sm font-medium mb-4">
-              Contact Us
+              Contact
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Ready to Transform Your Business?
