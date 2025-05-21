@@ -12,8 +12,22 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
   const [isHovered, setIsHovered] = useState(false);
   const IconComponent = LucideIcons[service.icon as keyof typeof LucideIcons] as React.FC<{ className?: string, size?: number }>;
 
-  // Determine whether to animate from left or right
-  const isEven = index % 2 === 0;
+  const handleServiceClick = () => {
+    // Find the contact form
+    const contactSection = document.getElementById('contact');
+    const serviceSelect = document.getElementById('service') as HTMLSelectElement;
+    
+    if (contactSection && serviceSelect) {
+      // Set the service in the dropdown
+      serviceSelect.value = service.id;
+      
+      // Scroll to contact section
+      contactSection.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start'
+      });
+    }
+  };
   
   return (
     <div 
@@ -47,7 +61,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index }) => {
         </div>
 
         <div className="mt-8">
-          <Button variant="accent">
+          <Button 
+            variant="accent"
+            onClick={handleServiceClick}
+          >
             {service.cta}
           </Button>
         </div>
