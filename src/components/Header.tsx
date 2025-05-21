@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Menu, X, ChevronDown, Star } from 'lucide-react';
 import Container from './ui/Container';
 import Button from './ui/Button';
 
@@ -62,7 +62,7 @@ const Header: React.FC = () => {
       <Container className="py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <img src="/assets/R.png" alt="Starvico Logo" className="h-8 w-8" />
+            <Star className="h-8 w-8 text-primary-500" />
             <div className="text-primary-500 font-bold text-xl sm:text-2xl">STARVICO</div>
           </div>
 
