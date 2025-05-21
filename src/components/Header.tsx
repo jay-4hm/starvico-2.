@@ -24,7 +24,7 @@ const Header: React.FC = () => {
     const targetElement = document.getElementById(targetId);
     
     if (targetElement) {
-      const headerOffset = 100; // Adjust this value to control the scroll offset
+      const headerOffset = 100;
       const elementPosition = targetElement.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
@@ -34,11 +34,9 @@ const Header: React.FC = () => {
       });
     }
 
-    // Close mobile menu if open
     if (isOpen) {
       setIsOpen(false);
     }
-    // Close submenu
     setOpenSubmenu(null);
   };
 
@@ -64,6 +62,7 @@ const Header: React.FC = () => {
       <Container className="py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
+            <img src="/assets/R.png" alt="Starvico Logo" className="h-8 w-8" />
             <div className="text-primary-500 font-bold text-xl sm:text-2xl">STARVICO</div>
           </div>
 
