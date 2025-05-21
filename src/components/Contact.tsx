@@ -110,7 +110,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-white">Email Us</h3>
+                  <h3 className="text-lg font-medium text-white">Email</h3>
                   <p className="mt-1 text-dark-300">info@starvico.com</p>
                 </div>
               </div>
@@ -122,7 +122,7 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div className="ml-4">
-                  <h3 className="text-lg font-medium text-white">Call Us</h3>
+                  <h3 className="text-lg font-medium text-white">Call</h3>
                   <p className="mt-1 text-dark-300">+1 (555) 123-4567</p>
                 </div>
               </div>
