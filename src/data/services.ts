@@ -77,7 +77,7 @@ export const services: Service[] = [
   {
     id: 'automated-outreach',
     title: 'Automated Outreach',
-    description: 'Reach your target audience with precision using our automated outreach solutions that nurture leads and drive conversions.',
+    description: 'Reach your target audience with precision using automated outreach solutions that nurture leads and drive conversions.',
     icon: 'SendHorizonal',
     features: [
       {
