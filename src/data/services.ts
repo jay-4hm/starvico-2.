@@ -99,7 +99,7 @@ export const services: Service[] = [
   {
     id: 'custom-websites',
     title: 'Custom Websites',
-    description: 'Create a powerful online presence with our professional web design and development services that incorporate intelligent lead generation.',
+    description: 'Create a powerful online presence with professional web design and development services that incorporate intelligent lead generation.',
     icon: 'Globe',
     features: [
       {
