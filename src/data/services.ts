@@ -17,7 +17,7 @@ export const services: Service[] = [
   {
     id: 'customer-support',
     title: 'Automated Customer Support',
-    description: 'Deliver exceptional support experiences 24/7 with our intelligent automation solutions that handle inquiries, resolve issues, and escalate when necessary.',
+    description: 'Deliver exceptional support experiences 24/7 with intelligent automation solutions that handle inquiries, resolve issues, and escalate when necessary.',
     icon: 'MessageSquareText',
     features: [
       {
