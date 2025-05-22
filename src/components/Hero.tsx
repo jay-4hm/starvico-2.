@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}
           >
-            Unlock your business's full potential with cutting-edge automation solutions. From customer support to lead generation, I streamline your operations to drive growth and reduce costs.
+            Unlock your business's full potential with cutting-edge automation solutions. From customer support to lead generation, we streamline your operations to drive growth and reduce costs.
           </p>
           
           <div 
